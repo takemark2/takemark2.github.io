@@ -1,0 +1,17 @@
+***Settings***
+# Test Template は your_test.robot で指定済みなのでここでは不要
+
+***Test Cases***
+# Site_Name: テストケース名として表示されます。
+# URL: テスト対象のURL。
+# Username, Password: ログイン情報。空の場合はログイン処理をスキップ。
+# Username_Locator, Password_Locator, Login_Button_Locator: Seleniumのロケータ (例: id:username, name:password, xpath://button[@type="submit"])。
+# Login_Success_Element_Locator: ログイン成功を確認するための要素のロケータ。空の場合は特定の要素確認なし。
+# Expected_Title_Contains: ページタイトルに含まれるべき文字列。
+# Post_Login_Check_Element: ログイン後またはページ遷移後に存在を確認する要素のロケータ。
+Site_Name;URL;Username;Password;Username_Locator;Password_Locator;Login_Button_Locator;Login_Success_Element_Locator;Expected_Title_Contains;Post_Login_Check_Element
+Test Google JP;https://www.google.co.jp/;;;;;;;Google;name:q
+Test Robot Framework Org;https://robotframework.org/;;;;;;;Robot Framework;xpath://h1[contains(text(),'Robot Framework')]
+# --- 以下、ログインが必要なサイトの記述例 (実際のサイトに合わせて変更してください) ---
+# Test My App Login;https://myapp.example.com/login;user123;P@$$wOrd;id:email_field;id:password_field;id:login_submit_button;id:dashboard_welcome_message;My App Dashboard;id:user_avatar
+# Test Another Service;https://service.example.net/auth;test_user;secret123;name:user;name:pass;xpath://button[text()='Sign In'];xpath://a[@href='/logout'];Service Home;
